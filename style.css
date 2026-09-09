@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+.welcome{
+    text-align: center;
+    padding: 20px;
+    color: #30170c;
+}
+
+body{
+    background-color: #efd4aa;
+}
+.barra-flutuante {
+  background-color: #fde9b6;
+  border: 1px solid #d8cfc2;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(45, 41, 38, 0.12);
+}
+.campo-pesquisa {
+  background-color: #ffffff;
+  color: #2d2926;
+
+  border: 1px solid #d8cfc2;
+  border-radius: 20px;
+}
+.campo-pesquisa::placeholder {
+  color: #8a8177;
+}
+.campo-pesquisa:focus {
+  border-color: #7a4e2d;
+  outline: none;
+}
+.botao-pesquisa {
+  background-color: #e8dac6;
+  color: #2d2926;
+
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.botao-pesquisa:hover {
+  background-color: #dcc7ad;
+}
+.separador-menu {
+  display: block;
+  width: 1px;
+  height: 28px;
+  background-color: #d8cfc2;
+}
+.item-menu {
+  color: #2d2926;
+  text-decoration: none;
+
+  padding: 10px 14px;
+  border-radius: 20px;
+
+  transition: background-color 0.2s, color 0.2s;
+}
+.item-menu:hover {
+  background-color: #e8dac6;
+}
+.item-menu--ativo {
+  background-color: #2d2926;
+  color: #fffdf8;
+}
+.item-menu--cadastro {
+  background-color: #7a4e2d;
+  color: #ffffff;
+}
+
+.item-menu--cadastro:hover {
+  background-color: #5f3924;
+}
+.rodape-principal {
+  background-color: #e8ded0;
+  color: #6f675f;
+}
+
+.nome-projeto {
+  color: #30170c;
+}
+
+.versao-projeto {
+  color: #6f675f;
+}
+
+body {
+  margin: 0;
+
+  /* Ocupa pelo menos toda a altura da tela. */
+  min-height: 100vh;
+
+  /* Melhor adaptação para navegadores de celular. */
+  min-height: 100dvh;
+
+  /* Organiza header, main e footer verticalmente. */
+  display: flex;
+  flex-direction: column;
+}
+
+.conteudo{
+  /* Ocupa todo o espaço disponível entre header e footer. */
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centraliza verticalmente. */
+  align-items: center;     /* Centraliza horizontalmente. */
+
+  padding: 32px 20px;
+  box-sizing: border-box;
+}
+.inicial {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+
+
+.header{
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+}
+
+.barra-flutuante{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+.pesquisa{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.separador-menu{
+    display: block;
+    width: 1px;
+    height: 28px;
+    color: #cccccc
+
+}
+.nenu{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.rodape {
+  width: 100%;
+  padding: 16px 24px;
+  box-sizing: border-box;
+ // background-color: #c6a46e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Organiza os elementos internos do rodapé. */
+.conteudo-rodape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+
+/* Estado inicial: aparece praticamente só a lupa. */
+.pesquisa {
+  display: flex;
+  align-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+  border: 1px solid #d8cfc2;
+  border-radius: 24px;
+
+  /* Cria a animação de expansão. */
+  transition:
+    width 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Expande quando o mouse passa ou quando o campo é selecionado. */
+.pesquisa:hover,
+.pesquisa:focus-within {
+  width: 300px;
+  box-shadow: 0 6px 18px rgba(45, 41, 38, 0.15);
+}
+
+/* Estado inicial do campo: recolhido e transparente. */
+.campo-pesquisa {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  height: 100%;
+
+  padding: 0;
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+  color: #2d2926;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.2s ease,
+    padding 0.35s ease;
+}
+
+/* Faz o campo aparecer quando a pesquisa expande. */
+.pesquisa:hover .campo-pesquisa,
+.pesquisa:focus-within .campo-pesquisa {
+  width: auto;
+  padding-left: 16px;
+  opacity: 1;
+}
+.botao-pesquisa {
+  width: 46px;
+  height: 46px;
+
+  /* Impede que a lupa seja espremida durante a animação. */
+  flex-shrink: 0;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background-color: #e8dac6;
+  color: #2d2926;
+
+  cursor: pointer;
+}
+
+.botao-pesquisa:hover {
+  background-color: #dcc7ad;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .barra-flutuante {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .separador-menu {
+    display: none;
+  }
+
+  .menu {
+    justify-content: center;
+  }
+}
+@media (hover: none), (max-width: 600px) {
+  .pesquisa,
+  .pesquisa:hover,
+  .pesquisa:focus-within {
+    width: 100%;
+  }
+
+  .campo-pesquisa,
+  .pesquisa:hover .campo-pesquisa,
+  .pesquisa:focus-within .campo-pesquisa {
+    width: auto;
+    padding-left: 16px;
+    opacity: 1;
+  }
+}
